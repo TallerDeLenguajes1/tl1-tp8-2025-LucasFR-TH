@@ -57,7 +57,7 @@ while (opern != 0) {
                         string tareaBuscada = Console.ReadLine();
                         // muestro la lista de tareas coincidnetes
                         foreach (Tarea tarea in tareasPendientes) {
-                            if (tareas.Descripcion = tareaBuscada) {
+                            if (tareas.Descripcion == tareaBuscada) {
                                 Console.WriteLine($"ID de tarea: {tareas.TareaID}");
                                 Console.WriteLine($"Descripcion: {tareas.Descripcion}");
                                 Console.WriteLine($"Duracion: {tareas.Duracion}");
@@ -70,10 +70,10 @@ while (opern != 0) {
                         string tareaCambiar = Console.ReadLine();
                         int NtareaCambiar;
                         if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
-                            foreach (Tarea tarea in tareasPendientes) {
+                            for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
                                 if (tareas.TareaID = NtareaCambiar) {
                                     tareasRealizadas.add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion);
-                                    tarea = remove tarea;
+                                    tareas.RemoveAt(i);
                                 }
                             }
                         }
