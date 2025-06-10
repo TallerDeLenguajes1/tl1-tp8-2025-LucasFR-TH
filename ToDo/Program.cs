@@ -3,11 +3,11 @@ using EspacioTarea;
 
 Tarea tareas = new Tarea();
 
-string descripciones[] = {"Sacar basura"; "Realizar mesa"; "Pintar pieza"; "Contar dinero"; "Activar maquina"};
+string descripciones[] = { "Sacar basura"; "Realizar mesa"; "Pintar pieza"; "Contar dinero"; "Activar maquina"};
 
 int numeroTareas = random.Next(11);
-List<tareas> tareasPendientes = new List<tareas>();
-List<tareas> tareasRealizadas = new List<tareas>();
+List<Tarea> tareasPendientes = new List<Tarea>();
+List<Tarea> tareasRealizadas = new List<Tarea>();
 
 for (int i=0; i<numeroTareas; i++) {
     tareasPendientes.add(new Tarea(i, descripciones[random.next(5)], random.next(100)));
@@ -71,8 +71,8 @@ while (opern != 0) {
                     int NtareaCambiar;
                     if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
                         for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
-                            if (tareas.TareaID = NtareaCambiar) {
-                                tareasRealizadas.add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion);
+                            if (tareas.TareaID == NtareaCambiar) {
+                                tareasRealizadas.add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion));
                                 tareas.RemoveAt(i);
                             }
                         }
