@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj": {}
+    "F:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj": {}
   },
   "projects": {
-    "E:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj": {
+    "F:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj",
+        "projectUniqueName": "F:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj",
         "projectName": "ToDo",
-        "projectPath": "E:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj",
-        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
-        "outputPath": "E:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\obj\\",
+        "projectPath": "F:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\ToDo.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "F:\\PROGRAMACION\\TALLER LENGUAJE\\tp8\\tl1-tp8-2025-LucasFR-TH\\ToDo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -30,58 +30,59 @@ while (opern != 0) {
     if (int.TryParse(oper, out opern)) {
         if (opern != 0) {
             switch (opern)
-                {
-                    case 1:
-                        Console.WriteLine("..........TAREAS PENDIENTES...........");
+            {
+                case 1:
+                    Console.WriteLine("..........TAREAS PENDIENTES...........");
+                    Console.WriteLine();
+                    // muestro la lista de tareas
+                    foreach (Tarea tarea in tareasPendientes) {
+                        Console.WriteLine($"ID de tarea: {tareas.TareaID}");
+                        Console.WriteLine($"Descripcion: {tareas.Descripcion}");
+                        Console.WriteLine($"Duracion: {tareas.Duracion}");
                         Console.WriteLine();
-                        // muestro la lista de tareas
-                        foreach (Tarea tarea in tareasPendientes) {
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("..........TAREAS REALIZADA...........");
+                    Console.WriteLine();
+                    // muestro la lista de tareas
+                    foreach (Tarea tarea in tareasRealizadas) {
+                        Console.WriteLine($"ID de tarea: {tareas.TareaID}");
+                        Console.WriteLine($"Descripcion: {tareas.Descripcion}");
+                        Console.WriteLine($"Duracion: {tareas.Duracion}");
+                        Console.WriteLine();
+                    }
+                case 3:
+                    Console.WriteLine("Ingrese la tarea que desea encontrar:");
+                    string tareaBuscada = Console.ReadLine();
+                    // muestro la lista de tareas coincidnetes
+                    foreach (Tarea tarea in tareasPendientes) {
+                        if (tareas.Descripcion == tareaBuscada) {
                             Console.WriteLine($"ID de tarea: {tareas.TareaID}");
                             Console.WriteLine($"Descripcion: {tareas.Descripcion}");
                             Console.WriteLine($"Duracion: {tareas.Duracion}");
                             Console.WriteLine();
                         }
-                        break;
-                    case 2:
-                        Console.WriteLine("..........TAREAS REALIZADA...........");
-                        Console.WriteLine();
-                        // muestro la lista de tareas
-                        foreach (Tarea tarea in tareasRealizadas) {
-                            Console.WriteLine($"ID de tarea: {tareas.TareaID}");
-                            Console.WriteLine($"Descripcion: {tareas.Descripcion}");
-                            Console.WriteLine($"Duracion: {tareas.Duracion}");
-                            Console.WriteLine();
-                        }
-                    case 3:
-                        Console.WriteLine("Ingrese la tarea que desea encontrar:");
-                        string tareaBuscada = Console.ReadLine();
-                        // muestro la lista de tareas coincidnetes
-                        foreach (Tarea tarea in tareasPendientes) {
-                            if (tareas.Descripcion == tareaBuscada) {
-                                Console.WriteLine($"ID de tarea: {tareas.TareaID}");
-                                Console.WriteLine($"Descripcion: {tareas.Descripcion}");
-                                Console.WriteLine($"Duracion: {tareas.Duracion}");
-                                Console.WriteLine(); 
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("Indique el ID de la tarea a marcar como realizada:");
+                    string tareaCambiar = Console.ReadLine();
+                    int NtareaCambiar;
+                    if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
+                        for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
+                            if (tareas.TareaID = NtareaCambiar) {
+                                tareasRealizadas.add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion);
+                                tareas.RemoveAt(i);
                             }
                         }
-                        break;
-                    case 4:
-                        Console.WriteLine("Indique el ID de la tarea a marcar como realizada:");
-                        string tareaCambiar = Console.ReadLine();
-                        int NtareaCambiar;
-                        if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
-                            for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
-                                if (tareas.TareaID = NtareaCambiar) {
-                                    tareasRealizadas.add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion);
-                                    tareas.RemoveAt(i);
-                                }
-                            }
-                        }
-                        break;
-                    default:
-                        break;
-                }
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
+    }
 }
 
 
