@@ -1,16 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using EspacioTarea;
+using System;
+using System.Collections.Generic;
 
 Tarea tareas = new Tarea();
 
-string descripciones[] = { "Sacar basura"; "Realizar mesa"; "Pintar pieza"; "Contar dinero"; "Activar maquina"};
+string[] descripciones = { "Sacar basura", "Realizar mesa", "Pintar pieza", "Contar dinero", "Activar maquina"};
 
-int numeroTareas = random.Next(11);
+int numeroTareas = 5;
 List<Tarea> tareasPendientes = new List<Tarea>();
 List<Tarea> tareasRealizadas = new List<Tarea>();
 
 for (int i=0; i<numeroTareas; i++) {
-    tareasPendientes.add(new Tarea(i, descripciones[random.next(5)], random.next(100)));
+    tareasPendientes.Add(new Tarea(i, descripciones[i], 50));
 }
 
 Console.WriteLine("--------------------------------------");
@@ -36,9 +38,9 @@ while (opern != 0) {
                     Console.WriteLine();
                     // muestro la lista de tareas
                     foreach (Tarea tarea in tareasPendientes) {
-                        Console.WriteLine($"ID de tarea: {tareas.TareaID}");
-                        Console.WriteLine($"Descripcion: {tareas.Descripcion}");
-                        Console.WriteLine($"Duracion: {tareas.Duracion}");
+                        Console.WriteLine($"ID de tarea: {tarea.TareaID}");
+                        Console.WriteLine($"Descripcion: {tarea.Descripcion}");
+                        Console.WriteLine($"Duracion: {tarea.Duracion}");
                         Console.WriteLine();
                     }
                     break;
@@ -47,9 +49,9 @@ while (opern != 0) {
                     Console.WriteLine();
                     // muestro la lista de tareas
                     foreach (Tarea tarea in tareasRealizadas) {
-                        Console.WriteLine($"ID de tarea: {tareas.TareaID}");
-                        Console.WriteLine($"Descripcion: {tareas.Descripcion}");
-                        Console.WriteLine($"Duracion: {tareas.Duracion}");
+                        Console.WriteLine($"ID de tarea: {tarea.TareaID}");
+                        Console.WriteLine($"Descripcion: {tarea.Descripcion}");
+                        Console.WriteLine($"Duracion: {tarea.Duracion}");
                         Console.WriteLine();
                     }
                 case 3:
@@ -58,9 +60,9 @@ while (opern != 0) {
                     // muestro la lista de tareas coincidnetes
                     foreach (Tarea tarea in tareasPendientes) {
                         if (tareas.Descripcion == tareaBuscada) {
-                            Console.WriteLine($"ID de tarea: {tareas.TareaID}");
-                            Console.WriteLine($"Descripcion: {tareas.Descripcion}");
-                            Console.WriteLine($"Duracion: {tareas.Duracion}");
+                            Console.WriteLine($"ID de tarea: {tarea.TareaID}");
+                            Console.WriteLine($"Descripcion: {tarea.Descripcion}");
+                            Console.WriteLine($"Duracion: {tarea.Duracion}");
                             Console.WriteLine();
                         }
                     }
@@ -72,7 +74,7 @@ while (opern != 0) {
                     if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
                         for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
                             if (tareas.TareaID == NtareaCambiar) {
-                                tareasRealizadas.add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion));
+                                tareasRealizadas.Add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion));
                                 tareas.RemoveAt(i);
                             }
                         }
