@@ -3,22 +3,24 @@ using EspacioTarea;
 using System;
 using System.Collections.Generic;
 
-Tarea tareas = new Tarea();
-
 string[] descripciones = { "Sacar basura", "Realizar mesa", "Pintar pieza", "Contar dinero", "Activar maquina"};
 
 int numeroTareas = 5;
 List<Tarea> tareasPendientes = new List<Tarea>();
 List<Tarea> tareasRealizadas = new List<Tarea>();
 
-for (int i=0; i<numeroTareas; i++) {
-    tareasPendientes.Add(new Tarea(i, descripciones[i], 50));
+// Crear tareas aleatoriamente
+for (int i = 0; i < numeroTareas; i++) {
+    Random rand = new Random();
+    int duracion = rand.Next(10, 101); // entre 10 y 100
+    tareasPendientes.Add(new Tarea(i, descripciones[i], duracion));
 }
 
 Console.WriteLine("--------------------------------------");
 Console.WriteLine("..........REGISTRO DE TAREAS..........");
 Console.WriteLine("--------------------------------------");
 Console.WriteLine();
+
 int opern = 1;
 while (opern != 0) {
     Console.WriteLine("Que desea realizar?");
@@ -59,7 +61,7 @@ while (opern != 0) {
                     string tareaBuscada = Console.ReadLine();
                     // muestro la lista de tareas coincidnetes
                     foreach (Tarea tarea in tareasPendientes) {
-                        if (tareas.Descripcion == tareaBuscada) {
+                        if (tarea.Descripcion == tareaBuscada) {
                             Console.WriteLine($"ID de tarea: {tarea.TareaID}");
                             Console.WriteLine($"Descripcion: {tarea.Descripcion}");
                             Console.WriteLine($"Duracion: {tarea.Duracion}");
@@ -73,9 +75,9 @@ while (opern != 0) {
                     int NtareaCambiar;
                     if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
                         for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
-                            if (tareas.TareaID == NtareaCambiar) {
-                                tareasRealizadas.Add(new Tarea(tareas.TareaID, tareas.Descripcion, tareas.Duracion));
-                                tareas.RemoveAt(i);
+                            if (tarea.TareaID == NtareaCambiar) {
+                                tareasRealizadas.Add(new Tarea(tarea.TareaID, tarea.Descripcion, tarea.Duracion));
+                                tarea.RemoveAt(i);
                             }
                         }
                     }
