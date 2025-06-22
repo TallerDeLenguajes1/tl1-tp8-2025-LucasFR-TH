@@ -75,9 +75,9 @@ while (opern != 0) {
                     int NtareaCambiar;
                     if (int.TryParse(tareaCambiar, out NtareaCambiar)) {
                         for (int i = tareasPendientes.Count - 1; i >= 0; i--) {
-                            if (tarea.TareaID == NtareaCambiar) {
-                                tareasRealizadas.Add(new Tarea(tarea.TareaID, tarea.Descripcion, tarea.Duracion));
-                                tarea.RemoveAt(i);
+                            if (tareasPendientes[i].TareaID == NtareaCambiar) {
+                                tareasRealizadas.Add(new Tarea(tareasPendientes[i].TareaID, tareasPendientes[i].Descripcion, tareasPendientes[i].Duracion));
+                                tareasPendientes.RemoveAt(i);
                             }
                         }
                     }
